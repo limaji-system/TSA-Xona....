@@ -1,0 +1,4 @@
+const app=document.querySelector<HTMLDivElement>("#app")!;
+const go=(file:string)=>{location.href=file};
+const esc=(v:string)=>v.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]!));
+app.innerHTML=`<main class="page"><div class="content"><div class="mark">X</div><div class="brand">XonaTSA</div><h1 class="subtitle">CONNECTEZ-VOUS</h1><p class="description">Accédez à votre compte pour gérer<br>vos événements et vos tickets.</p><section class="panel"><button class="btn primary" id="login">Se connecter</button><button class="btn outline" id="create">Créer un compte</button></section></div></main>`;document.querySelector("#login")?.addEventListener("click",()=>go("page-2-connexion.html"));document.querySelector("#create")?.addEventListener("click",()=>go("page-3-creation-compte.html"));

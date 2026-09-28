@@ -1,0 +1,4 @@
+const app=document.querySelector<HTMLDivElement>("#app")!;
+const go=(file:string)=>{location.href=file};
+const esc=(v:string)=>v.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]!));
+app.innerHTML=`<main class="page"><div class="content"><span class="back" id="back">← Retour</span><div class="mark">X</div><div class="brand">XonaTSA</div><h1 class="subtitle">Mot de passe oublié ?</h1><p class="description">Entrez l’adresse e-mail associée à votre compte.</p><div class="panel"><div class="field">✉ <input type="email" placeholder="Adresse e-mail"></div><button class="btn primary" id="send">Envoyer le code</button></div></div></main>`;document.querySelector("#back")?.addEventListener("click",()=>go("page-2-connexion.html"));document.querySelector("#send")?.addEventListener("click",()=>go("page-5-confirmation-code.html"));

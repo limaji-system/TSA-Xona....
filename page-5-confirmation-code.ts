@@ -1,0 +1,4 @@
+const app=document.querySelector<HTMLDivElement>("#app")!;
+const go=(file:string)=>{location.href=file};
+const esc=(v:string)=>v.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]!));
+app.innerHTML=`<main class="page"><div class="content"><span class="back" id="back">← Retour</span><div style="text-align:center;font-size:90px">🛡️</div><h1 class="subtitle">Confirmation du code<br>de récupération reçu</h1><p class="description">Entrez le code de récupération reçu par e-mail.</p><div class="code">${[0,1,2,3,4,5].map(i=>`<input maxlength="1" inputmode="numeric" id="c${i}">`).join("")}</div><button class="btn primary" id="verify">Vérifier le code</button></div></main>`;document.querySelector("#back")?.addEventListener("click",()=>go("page-4-mot-de-passe-oublie.html"));document.querySelector("#verify")?.addEventListener("click",()=>go("page-6-choix-profil.html"));
